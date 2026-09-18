@@ -11,7 +11,8 @@ export default function Home() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
     try {
@@ -23,7 +24,7 @@ export default function Home() {
 
       if (response.ok) {
         setSubmitStatus("success");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         setSubmitStatus("error");
       }
