@@ -53,7 +53,7 @@ export default function Home() {
           <div className="bg-white border border-gray-200 rounded-md p-6 h-96 overflow-y-auto text-sm text-gray-700 space-y-6 shadow-inner">
             <div>
               <h3 className="font-bold text-base mb-2">1. 개인정보의 처리 목적</h3>
-              <p>KJ MEMBERS(이하 ‘케이제이멤버스’)는 회원 가입, 맞선 매칭 서비스 제공 및 고객 응대를 위해 개인정보 수집하고 처리합니다. 이외에도 사후관리, 고객 상담, 이벤트 운영 등 서비스 품질 향상을 위한 활동에 활용됩니다.</p>
+              <p>KJ MEMBERS(이하 ‘케이제이멤버스’)는 회원 가입, 맞선 매칭 서비스 제공 및 고객 응대를 위해 개인정보를 수집하고 처리합니다. 이외에도 사후관리, 고객 상담, 이벤트 운영 등 서비스 품질 향상을 위한 활동에 활용됩니다.</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
                 <li>회원 가입 및 본인 인증</li>
                 <li>고객 맞춤형 프로필 매칭 제공</li>
@@ -99,7 +99,7 @@ export default function Home() {
               <h3 className="font-bold text-base mb-2">5. 처리하는 개인정보 항목</h3>
               <p>KJ MEMBERS는 맞선 중개 서비스 제공 및 회원 관리 목적으로 다음과 같은 개인정보 항목을 처리합니다.</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
-                <li>필수 항목: 이름, 생년월일, 성별, 연락처(휴대폰, 이메일), 아이디, 비밀번호, 결제 정보, 접속 로그, IP</li>
+                <li>필수 항목: 생년월일, 성별, 연락처(휴대폰, 이메일), 아이디, 비밀번호, 결제 정보, 접속 로그, IP</li>
                 <li>선택 항목: 직업, 종교, 학력, 사진, 자기소개 등 (회원 동의 시)</li>
               </ul>
             </div>
@@ -204,13 +204,6 @@ export default function Home() {
             {/* 1. 기본 인적 사항 */}
             <div className="sm:col-span-2 border-b border-gray-200 pb-2">
               <h3 className="text-lg font-bold text-gray-900">기본 인적 사항</h3>
-            </div>
-
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">이름</label>
-              <div className="mt-1">
-                <input type="text" name="name" id="name" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
             </div>
 
             <div>
