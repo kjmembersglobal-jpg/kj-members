@@ -53,7 +53,7 @@ export default function Home() {
           <div className="bg-white border border-gray-200 rounded-md p-6 h-96 overflow-y-auto text-sm text-gray-700 space-y-6 shadow-inner">
             <div>
               <h3 className="font-bold text-base mb-2">1. 개인정보의 처리 목적</h3>
-              <p>KJ MEMBERS(이하 ‘케이제이멤버스’)는 회원 가입, 맞선 매칭 서비스 제공 및 고객 응대를 위해 개인정보를 수집하고 처리합니다. 이외에도 사후관리, 고객 상담, 이벤트 운영 등 서비스 품질 향상을 위한 활동에 활용됩니다.</p>
+              <p>KJ MEMBERS(이하 ‘케이제이멤버스’)는 회원 가입, 맞선 매칭 서비스 제공 및 고객 응대를 위해 개인정보 수집하고 처리합니다. 이외에도 사후관리, 고객 상담, 이벤트 운영 등 서비스 품질 향상을 위한 활동에 활용됩니다.</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
                 <li>회원 가입 및 본인 인증</li>
                 <li>고객 맞춤형 프로필 매칭 제공</li>
@@ -131,7 +131,7 @@ export default function Home() {
               <ul className="list-disc pl-5 mt-2 space-y-1">
                 <li>책임자 성명: 장현규</li>
                 <li>연락처: 051-804-8017</li>
-                <li>이메일: kjmembers.global.com</li>
+                <li>이메일: kjmembers.global@gmail.com</li>
               </ul>
               <p className="mt-2">기타 개인정보 관련 문의는 상기 연락처 또는 홈페이지 고객센터를 통해 접수해 주세요.</p>
             </div>
