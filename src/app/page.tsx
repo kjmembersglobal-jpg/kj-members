@@ -27,6 +27,7 @@ export default function Home() {
       if (response.ok) {
         setSubmitStatus("success");
         form.reset();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setSubmitStatus("error");
       }
@@ -43,9 +44,7 @@ export default function Home() {
       <div className="min-h-screen bg-gray-50 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl w-full space-y-8 bg-white p-10 rounded-2xl shadow-sm border border-gray-100">
           <div>
-            <h2 className="mt-2 text-center text-3xl font-extrabold text-blue-600 tracking-tight">
-              KJ MEMBERS
-            </h2>
+            <img src="/logo.png" alt="KJ MEMBERS Logo" className="h-20 mx-auto object-contain mt-2" />
             <p className="mt-4 text-center text-sm text-gray-600">
               서비스 이용을 위한 개인정보 처리방침 동의
             </p>
@@ -181,20 +180,30 @@ export default function Home() {
           >
             &larr; 뒤로 가기
           </button>
-          <h2 className="mt-2 text-center text-3xl font-extrabold text-blue-600 tracking-tight">
-            KJ MEMBERS
-          </h2>
+          <img src="/logo.png" alt="KJ MEMBERS Logo" className="h-16 mx-auto object-contain mt-2" />
           <p className="mt-4 text-center text-sm text-gray-600">
-            한국 남성 - 일본 여성 국제결혼 매칭 프로필 등록
+            보다 원활한 상담을 위해 아래 정보를 입력해 주세요.
           </p>
         </div>
         
+        {submitStatus === "success" && (
+          <div className="p-4 rounded-md bg-green-50 mb-6">
+            <p className="text-sm font-bold text-green-800 text-center">성공적으로 등록되었습니다. 감사합니다!</p>
+          </div>
+        )}
+
+        {submitStatus === "error" && (
+          <div className="p-4 rounded-md bg-red-50 mb-6">
+            <p className="text-sm font-bold text-red-800 text-center">서버 에러(Google 연동 오류 등)로 인해 제출에 실패했습니다.</p>
+          </div>
+        )}
+
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             
-            {/* 기본 정보 */}
-            <div className="sm:col-span-2 border-b border-gray-200 pb-4">
-              <h3 className="text-lg font-medium text-gray-900">기본 정보</h3>
+            {/* 1. 기본 인적 사항 */}
+            <div className="sm:col-span-2 border-b border-gray-200 pb-2">
+              <h3 className="text-lg font-bold text-gray-900">기본 인적 사항</h3>
             </div>
 
             <div>
@@ -205,67 +214,42 @@ export default function Home() {
             </div>
 
             <div>
-              <label htmlFor="gender" className="block text-sm font-medium text-gray-700">성별</label>
-              <div className="mt-1">
-                <select id="gender" name="gender" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
-                  <option value="">선택해주세요</option>
-                  <option value="남성 (한국)">남성 (한국)</option>
-                  <option value="여성 (일본)">여성 (일본)</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="birthDate" className="block text-sm font-medium text-gray-700">생년월일</label>
-              <div className="mt-1">
-                <input type="date" name="birthDate" id="birthDate" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="location" className="block text-sm font-medium text-gray-700">거주 지역</label>
-              <div className="mt-1">
-                <input type="text" name="location" id="location" placeholder="예: 서울, 도쿄" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700">연락처</label>
               <div className="mt-1">
-                <input type="tel" name="phone" id="phone" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                <input type="tel" name="phone" id="phone" required placeholder="예: 010-1234-5678" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
             <div>
-              <label htmlFor="messenger" className="block text-sm font-medium text-gray-700">메신저 ID (카카오톡/LINE)</label>
+              <label htmlFor="location" className="block text-sm font-medium text-gray-700">1. 사는 곳</label>
               <div className="mt-1">
-                <input type="text" name="messenger" id="messenger" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            {/* 상세 프로필 */}
-            <div className="sm:col-span-2 border-b border-gray-200 pb-4 mt-6">
-              <h3 className="text-lg font-medium text-gray-900">상세 프로필</h3>
-            </div>
-
-            <div>
-              <label htmlFor="occupation" className="block text-sm font-medium text-gray-700">직업</label>
-              <div className="mt-1">
-                <input type="text" name="occupation" id="occupation" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                <input type="text" name="location" id="location" required placeholder="예: 서울, 부산 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
             <div>
-              <label htmlFor="height" className="block text-sm font-medium text-gray-700">신장 (cm)</label>
+              <label htmlFor="birthYear" className="block text-sm font-medium text-gray-700">2. 태어난 해</label>
               <div className="mt-1">
-                <input type="number" name="height" id="height" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                <input type="text" name="birthYear" id="birthYear" required placeholder="예: 1990년" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="maritalStatus" className="block text-sm font-medium text-gray-700">결혼 여부</label>
+              <label htmlFor="heightWeight" className="block text-sm font-medium text-gray-700">3. 신장 / 몸무게</label>
               <div className="mt-1">
-                <select id="maritalStatus" name="maritalStatus" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <input type="text" name="heightWeight" id="heightWeight" required placeholder="예: 175cm / 70kg" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            {/* 2. 가족 및 결혼 사항 */}
+            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
+              <h3 className="text-lg font-bold text-gray-900">가족 및 결혼 사항</h3>
+            </div>
+
+            <div>
+              <label htmlFor="maritalStatus" className="block text-sm font-medium text-gray-700">4. 결혼 유무</label>
+              <div className="mt-1">
+                <select id="maritalStatus" name="maritalStatus" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
                   <option value="">선택해주세요</option>
                   <option value="초혼">초혼</option>
                   <option value="재혼">재혼</option>
@@ -273,38 +257,116 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 희망 조건 */}
-            <div className="sm:col-span-2 border-b border-gray-200 pb-4 mt-6">
-              <h3 className="text-lg font-medium text-gray-900">매칭 및 상담</h3>
+            <div>
+              <label htmlFor="hasChildren" className="block text-sm font-medium text-gray-700">5. 자녀 유무</label>
+              <div className="mt-1">
+                <select id="hasChildren" name="hasChildren" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                  <option value="">선택해주세요</option>
+                  <option value="자녀 없음">자녀 없음</option>
+                  <option value="자녀 있음">자녀 있음</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="parenting" className="block text-sm font-medium text-gray-700">6. 자녀 양육 여부</label>
+              <div className="mt-1">
+                <select id="parenting" name="parenting" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                  <option value="">선택해주세요</option>
+                  <option value="해당 없음 (자녀 없음)">해당 없음 (자녀 없음)</option>
+                  <option value="직접 양육">직접 양육</option>
+                  <option value="비양육">비양육</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="liveWithParents" className="block text-sm font-medium text-gray-700">14. 부모님과 동거 여부</label>
+              <div className="mt-1">
+                <select id="liveWithParents" name="liveWithParents" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                  <option value="">선택해주세요</option>
+                  <option value="독립">독립 (따로 거주)</option>
+                  <option value="동거 중">동거 중</option>
+                </select>
+              </div>
+            </div>
+
+
+            {/* 3. 직업 및 라이프스타일 */}
+            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
+              <h3 className="text-lg font-bold text-gray-900">직업 및 라이프스타일</h3>
+            </div>
+
+            <div>
+              <label htmlFor="occupation" className="block text-sm font-medium text-gray-700">8. 현재 하고 계신 일</label>
+              <div className="mt-1">
+                <input type="text" name="occupation" id="occupation" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="income" className="block text-sm font-medium text-gray-700">7. 연봉 또는 소득 수준</label>
+              <div className="mt-1">
+                <input type="text" name="income" id="income" required placeholder="예: 약 0000만원" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="smokeDrink" className="block text-sm font-medium text-gray-700">12. 흡연 / 음주 여부</label>
+              <div className="mt-1">
+                <input type="text" name="smokeDrink" id="smokeDrink" required placeholder="예: 비흡연 / 월 1~2회" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="religion" className="block text-sm font-medium text-gray-700">13. 종교 여부</label>
+              <div className="mt-1">
+                <input type="text" name="religion" id="religion" required placeholder="예: 무교, 기독교 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            {/* 4. 글로벌 역량 및 매칭 */}
+            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
+              <h3 className="text-lg font-bold text-gray-900">글로벌 및 매칭 정보</h3>
+            </div>
+
+            <div>
+              <label htmlFor="japaneseLevel" className="block text-sm font-medium text-gray-700">9. 일본어 가능 여부</label>
+              <div className="mt-1">
+                <input type="text" name="japaneseLevel" id="japaneseLevel" required placeholder="예: 전혀 못함, 간단한 인사 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="japanVisit" className="block text-sm font-medium text-gray-700">10. 일본 방문 경험</label>
+              <div className="mt-1">
+                <input type="text" name="japanVisit" id="japanVisit" required placeholder="예: 없음, 1회, 다수 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="preferences" className="block text-sm font-medium text-gray-700">이상형 및 바라는 점</label>
+              <label htmlFor="idealType" className="block text-sm font-medium text-gray-700">11. 이상형 (외모 또는 성격 그리고 연령대)</label>
               <div className="mt-1">
-                <textarea id="preferences" name="preferences" rows={4} className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                <textarea id="idealType" name="idealType" required rows={3} placeholder="이상형에 대해 자유롭게 적어주세요." className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
               </div>
             </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="consultTime" className="block text-sm font-medium text-gray-700">상담 가능한 시간대</label>
+              <div className="mt-1">
+                <input type="text" name="consultTime" id="consultTime" required placeholder="예: 평일 오후 6시 이후, 주말 언제나" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
           </div>
 
-          {submitStatus === "success" && (
-            <div className="p-4 rounded-md bg-green-50">
-              <p className="text-sm font-medium text-green-800">성공적으로 등록되었습니다. 감사합니다!</p>
-            </div>
-          )}
-
-          {submitStatus === "error" && (
-            <div className="p-4 rounded-md bg-red-50">
-              <p className="text-sm font-medium text-red-800">서버 에러(Google 연동 오류 등)로 인해 제출에 실패했습니다. 관리자에게 문의해주세요.</p>
-            </div>
-          )}
-
-          <div>
+          <div className="pt-4">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+              className="w-full flex justify-center py-4 px-4 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
             >
-              {isSubmitting ? "제출 중..." : "프로필 등록하기"}
+              {isSubmitting ? "제출 중..." : "상담 신청 및 프로필 등록하기"}
             </button>
           </div>
         </form>
