@@ -32,7 +32,6 @@ export async function POST(request: Request) {
 
     const rowData = {
       '등록일시': new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }),
-      '이름': body.name,
       '연락처': body.phone,
       '사는곳': body.location,
       '태어난해': body.birthYear,
