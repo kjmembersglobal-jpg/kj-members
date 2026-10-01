@@ -207,28 +207,28 @@ export default function Home() {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">연락처</label>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">1. 연락처</label>
               <div className="mt-1">
                 <input type="tel" name="phone" id="phone" required placeholder="예: 010-1234-5678" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
             <div>
-              <label htmlFor="location" className="block text-sm font-medium text-gray-700">1. 사는 곳</label>
+              <label htmlFor="location" className="block text-sm font-medium text-gray-700">2. 사는 곳</label>
               <div className="mt-1">
                 <input type="text" name="location" id="location" required placeholder="예: 서울, 부산 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
             <div>
-              <label htmlFor="birthYear" className="block text-sm font-medium text-gray-700">2. 태어난 해</label>
+              <label htmlFor="birthYear" className="block text-sm font-medium text-gray-700">3. 태어난 해</label>
               <div className="mt-1">
                 <input type="text" name="birthYear" id="birthYear" required placeholder="예: 1990년" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
-            <div className="sm:col-span-2">
-              <label htmlFor="heightWeight" className="block text-sm font-medium text-gray-700">3. 신장 / 몸무게</label>
+            <div>
+              <label htmlFor="heightWeight" className="block text-sm font-medium text-gray-700">4. 신장 / 몸무게</label>
               <div className="mt-1">
                 <input type="text" name="heightWeight" id="heightWeight" required placeholder="예: 175cm / 70kg" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
@@ -240,7 +240,7 @@ export default function Home() {
             </div>
 
             <div>
-              <label htmlFor="maritalStatus" className="block text-sm font-medium text-gray-700">4. 결혼 유무</label>
+              <label htmlFor="maritalStatus" className="block text-sm font-medium text-gray-700">5. 결혼 유무</label>
               <div className="mt-1">
                 <select id="maritalStatus" name="maritalStatus" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
                   <option value="">선택해주세요</option>
@@ -251,7 +251,7 @@ export default function Home() {
             </div>
 
             <div>
-              <label htmlFor="hasChildren" className="block text-sm font-medium text-gray-700">5. 자녀 유무</label>
+              <label htmlFor="hasChildren" className="block text-sm font-medium text-gray-700">6. 자녀 유무</label>
               <div className="mt-1">
                 <select id="hasChildren" name="hasChildren" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
                   <option value="">선택해주세요</option>
@@ -261,8 +261,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div>
-              <label htmlFor="parenting" className="block text-sm font-medium text-gray-700">6. 자녀 양육 여부</label>
+            <div className="sm:col-span-2">
+              <label htmlFor="parenting" className="block text-sm font-medium text-gray-700">7. 자녀 양육 여부</label>
               <div className="mt-1">
                 <select id="parenting" name="parenting" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
                   <option value="">선택해주세요</option>
@@ -273,8 +273,72 @@ export default function Home() {
               </div>
             </div>
 
+            {/* 3. 직업 및 소득 */}
+            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
+              <h3 className="text-lg font-bold text-gray-900">직업 및 소득</h3>
+            </div>
+            
             <div>
-              <label htmlFor="liveWithParents" className="block text-sm font-medium text-gray-700">14. 부모님과 동거 여부</label>
+              <label htmlFor="income" className="block text-sm font-medium text-gray-700">8. 연봉 또는 소득 수준</label>
+              <div className="mt-1">
+                <input type="text" name="income" id="income" required placeholder="예: 약 0000만원" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="occupation" className="block text-sm font-medium text-gray-700">9. 현재 하고 계신 일</label>
+              <div className="mt-1">
+                <input type="text" name="occupation" id="occupation" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            {/* 4. 글로벌 및 이상형 */}
+            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
+              <h3 className="text-lg font-bold text-gray-900">글로벌 및 이상형</h3>
+            </div>
+
+            <div>
+              <label htmlFor="japaneseLevel" className="block text-sm font-medium text-gray-700">10. 일본어 가능 여부</label>
+              <div className="mt-1">
+                <input type="text" name="japaneseLevel" id="japaneseLevel" required placeholder="예: 전혀 못함, 간단한 인사 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="japanVisit" className="block text-sm font-medium text-gray-700">11. 일본 방문 경험</label>
+              <div className="mt-1">
+                <input type="text" name="japanVisit" id="japanVisit" required placeholder="예: 없음, 1회, 다수 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="idealType" className="block text-sm font-medium text-gray-700">12. 이상형 (외모 또는 성격 그리고 연령대)</label>
+              <div className="mt-1">
+                <textarea id="idealType" name="idealType" required rows={3} placeholder="이상형에 대해 자유롭게 적어주세요." className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+              </div>
+            </div>
+
+            {/* 5. 라이프스타일 및 기타 */}
+            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
+              <h3 className="text-lg font-bold text-gray-900">라이프스타일 및 기타</h3>
+            </div>
+
+            <div>
+              <label htmlFor="smokeDrink" className="block text-sm font-medium text-gray-700">13. 흡연 / 음주 여부</label>
+              <div className="mt-1">
+                <input type="text" name="smokeDrink" id="smokeDrink" required placeholder="예: 비흡연 / 월 1~2회" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="religion" className="block text-sm font-medium text-gray-700">14. 종교 여부</label>
+              <div className="mt-1">
+                <input type="text" name="religion" id="religion" required placeholder="예: 무교, 기독교 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="liveWithParents" className="block text-sm font-medium text-gray-700">15. 부모님과 동거 여부</label>
               <div className="mt-1">
                 <select id="liveWithParents" name="liveWithParents" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
                   <option value="">선택해주세요</option>
@@ -283,71 +347,11 @@ export default function Home() {
                 </select>
               </div>
             </div>
-
-
-            {/* 3. 직업 및 라이프스타일 */}
-            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
-              <h3 className="text-lg font-bold text-gray-900">직업 및 라이프스타일</h3>
-            </div>
-
+            
             <div>
-              <label htmlFor="occupation" className="block text-sm font-medium text-gray-700">8. 현재 하고 계신 일</label>
+              <label htmlFor="consultTime" className="block text-sm font-medium text-gray-700">16. 상담 가능한 시간대</label>
               <div className="mt-1">
-                <input type="text" name="occupation" id="occupation" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="income" className="block text-sm font-medium text-gray-700">7. 연봉 또는 소득 수준</label>
-              <div className="mt-1">
-                <input type="text" name="income" id="income" required placeholder="예: 약 0000만원" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="smokeDrink" className="block text-sm font-medium text-gray-700">12. 흡연 / 음주 여부</label>
-              <div className="mt-1">
-                <input type="text" name="smokeDrink" id="smokeDrink" required placeholder="예: 비흡연 / 월 1~2회" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="religion" className="block text-sm font-medium text-gray-700">13. 종교 여부</label>
-              <div className="mt-1">
-                <input type="text" name="religion" id="religion" required placeholder="예: 무교, 기독교 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            {/* 4. 글로벌 역량 및 매칭 */}
-            <div className="sm:col-span-2 border-b border-gray-200 pb-2 mt-6">
-              <h3 className="text-lg font-bold text-gray-900">글로벌 및 매칭 정보</h3>
-            </div>
-
-            <div>
-              <label htmlFor="japaneseLevel" className="block text-sm font-medium text-gray-700">9. 일본어 가능 여부</label>
-              <div className="mt-1">
-                <input type="text" name="japaneseLevel" id="japaneseLevel" required placeholder="예: 전혀 못함, 간단한 인사 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="japanVisit" className="block text-sm font-medium text-gray-700">10. 일본 방문 경험</label>
-              <div className="mt-1">
-                <input type="text" name="japanVisit" id="japanVisit" required placeholder="예: 없음, 1회, 다수 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="idealType" className="block text-sm font-medium text-gray-700">11. 이상형 (외모 또는 성격 그리고 연령대)</label>
-              <div className="mt-1">
-                <textarea id="idealType" name="idealType" required rows={3} placeholder="이상형에 대해 자유롭게 적어주세요." className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="consultTime" className="block text-sm font-medium text-gray-700">상담 가능한 시간대</label>
-              <div className="mt-1">
-                <input type="text" name="consultTime" id="consultTime" required placeholder="예: 평일 오후 6시 이후, 주말 언제나" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                <input type="text" name="consultTime" id="consultTime" required placeholder="예: 평일 오후 6시 이후" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
