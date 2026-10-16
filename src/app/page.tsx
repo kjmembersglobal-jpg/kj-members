@@ -322,17 +322,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div>
+            <div className="sm:col-span-2">
               <label htmlFor="preferredAge" className="block text-sm font-medium text-gray-700">13. 희망하는 상대방 나이대</label>
               <div className="mt-1">
                 <input type="text" name="preferredAge" id="preferredAge" required placeholder="예: 20대 중후반, 동갑~4살 연하 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="smokeDrink" className="block text-sm font-medium text-gray-700">15. 흡연 / 음주 여부</label>
-              <div className="mt-1">
-                <input type="text" name="smokeDrink" id="smokeDrink" required placeholder="예: 비흡연 / 월 1~2회" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
@@ -349,14 +342,28 @@ export default function Home() {
             </div>
 
             <div>
-              <label htmlFor="religion" className="block text-sm font-medium text-gray-700">16. 종교 여부</label>
+              <label htmlFor="smoking" className="block text-sm font-medium text-gray-700">15. 흡연 여부</label>
+              <div className="mt-1">
+                <input type="text" name="smoking" id="smoking" required placeholder="예: 비흡연, 전자담배, 흡연 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="drinking" className="block text-sm font-medium text-gray-700">16. 음주 여부</label>
+              <div className="mt-1">
+                <input type="text" name="drinking" id="drinking" required placeholder="예: 안 마심, 가끔(월 1~2회), 주 1~2회 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="religion" className="block text-sm font-medium text-gray-700">17. 종교 여부</label>
               <div className="mt-1">
                 <input type="text" name="religion" id="religion" required placeholder="예: 무교, 기독교 등" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
             </div>
 
             <div>
-              <label htmlFor="liveWithParents" className="block text-sm font-medium text-gray-700">17. 부모님과 동거 여부</label>
+              <label htmlFor="liveWithParents" className="block text-sm font-medium text-gray-700">18. 부모님과 동거 여부</label>
               <div className="mt-1">
                 <select id="liveWithParents" name="liveWithParents" required className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500">
                   <option value="">선택해주세요</option>
@@ -367,7 +374,7 @@ export default function Home() {
             </div>
             
             <div className="sm:col-span-2">
-              <label htmlFor="consultTime" className="block text-sm font-medium text-gray-700">18. 상담 가능한 시간대</label>
+              <label htmlFor="consultTime" className="block text-sm font-medium text-gray-700">19. 상담 가능한 시간대</label>
               <div className="mt-1">
                 <input type="text" name="consultTime" id="consultTime" required placeholder="예: 평일 오후 6시 이후, 주말 언제나" className="py-2 px-3 block w-full shadow-sm sm:text-sm border-gray-300 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
               </div>
